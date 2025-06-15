@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function mySqrt(x) {
+            if (x === 0) return 0;
+            let start = 1;
+            let end = x;
+            while(start <= end){
+                let mid = Math.floor((start + end) / 2) 
+                if(mid * mid === x) return mid;
+                else if(mid * mid < x) start = mid + 1;
+                else end = mid - 1; 
+            }
+            return end;
+        };
+        console.log(mySqrt(16))
+    </script>
+</body>
+</html>
