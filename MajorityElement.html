@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    function majorityElement(nums) {
+    let count = 0;
+    let candidate = null;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (count === 0) {
+            candidate = nums[i];
+        }
+        count += (nums[i] === candidate) ? 1 : -1;
+    }
+
+    return candidate;
+}
+
+console.log(majorityElement([3,2,3]))
+
+    </script>
+</body>
+</html>
