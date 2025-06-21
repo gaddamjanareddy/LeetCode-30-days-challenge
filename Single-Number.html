@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+    function singleNumber(nums) {
+      let counts = {};
+      for (let i = 0; i < nums.length; i++) {
+        let num = nums[i];
+        if (counts[num] === undefined) {
+          counts[num] = 1;
+        } else {
+          counts[num] += 1;
+        }
+      }
+      for (let i = 0; i < nums.length; i++) {
+        if (counts[nums[i]] === 1) {
+          return nums[i];
+        }
+      }
+    }
+
+    let arr = [2,3,4,2,5,4,3,1,1,2]
+    console.log(singleNumber(arr));
+
+    </script>
+</body>
+</html>
