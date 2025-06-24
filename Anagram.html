@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function isAnagram(s, t) {
+    if (s.length !== t.length) return false;
+    const count = {};
+    for (let i = 0; i < s.length; i++) {
+        const char = s[i];
+        if (count[char] === undefined) {
+            count[char] = 1;
+        } else {
+            count[char]++;
+        }
+    }
+    for (let i = 0; i < t.length; i++) {
+        const char = t[i];
+        if (count[char] === undefined || count[char] === 0) {
+            return false;
+        }
+        count[char]--;
+    }
+
+    return true;
+}
+console.log(isAnagram("race", "care")); 
+console.log(isAnagram("hello", "hey")); 
+    </script>
+</body>
+</html>
