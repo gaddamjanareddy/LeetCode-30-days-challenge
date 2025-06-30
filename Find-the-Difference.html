@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function findTheDifference(s, t) {
+    let count = {};
+
+    for (let i = 0; i < s.length; i++) {
+        let letter = s[i];
+        if (count[letter] === undefined) {
+            count[letter] = 1;
+        } else {
+            count[letter]++;
+        }
+    }
+    for (let i = 0; i < t.length; i++) {
+        let letter = t[i];
+        if (count[letter] === undefined || count[letter] === 0) {
+            return letter;
+        } else {
+            count[letter]--;
+        }
+    }
+}
+console.log(findTheDifference("abcd", "abcde")); 
+console.log(findTheDifference("", "y"));         
+
+
+    </script>
+</body>
+</html>
