@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addDigits(nums){
+            while(nums >= 10){
+                let add = 0;
+                while(nums > 0){
+                    add +=  nums % 10; 
+                    nums = Math.floor(nums/10);
+                }
+                nums = add
+            }
+            return nums
+        }
+        console.log(addDigits(38))
+        console.log(addDigits(10))
+        console.log(addDigits(2))
+        
+    </script>
+</body>
+</html>
